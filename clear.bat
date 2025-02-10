@@ -1,6 +1,7 @@
 ```batch
 if exist "Local\" (
 cd Local
+
 if exist "Google\" (
 echo "Folder Google found"
 cd Google
@@ -21,6 +22,28 @@ cd ..
 )
 ) else (
 echo "Folder Google not found"
+)
+
+if exist "Yandex\" (
+echo "Folder Yandex found"
+cd Yandex
+if exist "YandexBrowser\" (
+echo "Folder YandexBrowser found"
+cd YandexBrowser
+If exist "User Data\" (
+echo "Folder and cache User Data found"
+rmdir "User Data" /s /q
+echo "Folder and cache User Data clean"
+) else (
+echo "Folder User Data not found"
+cd ../..
+)
+) else (
+echo "Folder YandexBrowser not found" 
+cd ..
+)
+) else (
+echo "Folder Yandex not found"
 )
 
 if exist "Mozilla\" (
