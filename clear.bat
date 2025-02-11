@@ -87,5 +87,21 @@ cd ..
 echo "Folder Roaming not found"
 )
 
+cd ..
+if exist "Documents\" (
+echo "Folder Documents found"
+cd Documents
+if exist "GitHub\" (
+echo "Folder GitHubRep found"
+rmdir "GitHub"
+echo "Folder and cache GitHubRep clean"
+) else (
+echo "Folder GitHubRep not found"
+cd ..
+)
+) else (
+echo "Folder Documents not found"
+)
+
 pause
 ```
