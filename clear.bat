@@ -95,7 +95,7 @@ echo Folder Documents found
 cd Documents
 if exist "GitHub\" (
 echo Folder ..\..\GitHubRep found
-rmdir GitHub
+rmdir GitHub /s /q
 echo Folder and cache ..\..\GitHubRep clean
 ) else (
 echo Folder ..\..\GitHubRep not found
