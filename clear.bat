@@ -1,107 +1,108 @@
-```batch
+@echo off
+
 if exist "Local\" (
 cd Local
 
 if exist "Google\" (
-echo "Folder Google found"
+echo Folder Google found
 cd Google
 if exist "Chrome\" (
-echo "Folder Chrome found"
+echo Folder ..\Chrome found
 cd Chrome
 If exist "User Data\" (
-echo "Folder and cache User Data found"
+echo Folder and cache ..\..\User Data found
 rmdir "User Data" /s /q
-echo "Folder and cache User Data clean"
+echo Folder and cache ..\..\User Data clean
 ) else (
-echo "Folder User Data not found"
+echo Folder ..\..\User Data not found
 cd ../..
 )
 ) else (
-echo "Folder Chrome not found" 
+echo Folder ..\Chrome not found 
 cd ..
 )
 ) else (
-echo "Folder Google not found"
+echo Folder Google not found
 )
 
 if exist "Yandex\" (
-echo "Folder Yandex found"
+echo Folder Yandex found
 cd Yandex
 if exist "YandexBrowser\" (
-echo "Folder YandexBrowser found"
+echo Folder YandexBrowser found
 cd YandexBrowser
 If exist "User Data\" (
-echo "Folder and cache User Data found"
+echo Folder and cache User Data found
 rmdir "User Data" /s /q
-echo "Folder and cache User Data clean"
+echo Folder and cache User Data clean
 ) else (
-echo "Folder User Data not found"
+echo Folder User Data not found
 cd ../..
 )
 ) else (
-echo "Folder YandexBrowser not found" 
+echo Folder YandexBrowser not found 
 cd ..
 )
 ) else (
-echo "Folder Yandex not found"
+echo Folder Yandex not found
 )
 
 if exist "Mozilla\" (
-echo "Folder Mozilla found"
+echo Folder Mozilla found
 cd Mozilla
 if exist "Firefox\" (
-echo "Folder Firefox found"
+echo Folder ..\Firefox found
 cd Firefox
 If exist "Profiles\" (
-echo "Folder Profiles found"
+echo Folder ..\..\Profiles found
 rmdir Profiles /s /q
-echo "Folder and cache Profiles clean "
+echo Folder and cache ..\..\Profiles clean
+cd ../..
 ) else (
-echo "Folder Profiles not found"
+echo Folder ..\..\Profiles not found
 cd ../..
 )
 ) else (
-echo "Folder Firefox not found" 
+echo Folder ..\Firefox not found 
 cd ..
 )
 ) else (
-echo "Folder Mozilla not found"
+echo Folder Mozilla not found
 )
 cd ..
 ) else (
-echo "Folder Local not found"
+echo Folder Local not found
 )
 
 if exist "Roaming\" (
 cd Roaming
 if exist "GitHub Desktop\" (
-echo "Folder GitHub Desktop found"
+echo Folder ..\GitHub Desktop found
 rmdir "GitHub Desktop" /s /q
-echo "Folder and cache GitHub Desktop clean"
+echo Folder and cache ..\GitHub Desktop clean
 cd ..
 ) else (
-echo "Folder GitHub Desktop not found"
+echo Folder ..\GitHub Desktop not found
 cd ..
 )
 ) else (
-echo "Folder Roaming not found"
+echo Folder Roaming not found
 )
 
 cd ..
 if exist "Documents\" (
-echo "Folder Documents found"
+echo Folder Documents found
 cd Documents
 if exist "GitHub\" (
-echo "Folder GitHubRep found"
-rmdir "GitHub"
-echo "Folder and cache GitHubRep clean"
+echo Folder ..\..\GitHubRep found
+rmdir GitHub
+echo Folder and cache ..\..\GitHubRep clean
 ) else (
-echo "Folder GitHubRep not found"
+echo Folder ..\..\GitHubRep not found
 cd ..
 )
 ) else (
-echo "Folder Documents not found"
+echo Folder Documents not found
 )
 
 pause
-```
