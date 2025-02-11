@@ -2,7 +2,6 @@
 
 if exist "Local\" (
 cd Local
-
 if exist "Google\" (
 echo Folder Google found
 cd Google
@@ -24,7 +23,13 @@ cd ..
 ) else (
 echo Folder Google not found
 )
+cd ..
+) else (
+echo Folder Local not found
+)
 
+if exist "Local\" (
+cd Local
 if exist "Yandex\" (
 echo Folder Yandex found
 cd Yandex
@@ -46,7 +51,13 @@ cd ..
 ) else (
 echo Folder Yandex not found
 )
+cd ..
+) else (
+echo Folder Local not found
+)
 
+if exist "Local\" (
+cd Local
 if exist "Mozilla\" (
 echo Folder Mozilla found
 cd Mozilla
@@ -56,7 +67,7 @@ cd Firefox
 If exist "Profiles\" (
 echo Folder ..\..\Profiles found
 rmdir Profiles /s /q
-echo Folder and cache ..\..\Profiles clean
+echo Folder and cache ..\..\Profiles1 clean
 cd ../..
 ) else (
 echo Folder ..\..\Profiles not found
@@ -72,6 +83,35 @@ echo Folder Mozilla not found
 cd ..
 ) else (
 echo Folder Local not found
+)
+
+if exist "Roaming\" (
+cd Roaming
+if exist "Mozilla\" (
+echo Folder Mozilla found
+cd Mozilla
+if exist "Firefox\" (
+echo Folder ..\Firefox found
+cd Firefox
+If exist "Profiles\" (
+echo Folder ..\..\Profiles found
+rmdir Profiles /s /q
+echo Folder and cache ..\..\Profiles2 clean
+cd ../..
+) else (
+echo Folder ..\..\Profiles not found
+cd ../..
+)
+) else (
+echo Folder ..\Firefox not found 
+cd ..
+)
+) else (
+echo Folder Mozilla not found
+)
+cd ..
+) else (
+echo Folder Roaming not found
 )
 
 if exist "Roaming\" (
