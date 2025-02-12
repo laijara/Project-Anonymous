@@ -34,7 +34,7 @@ call :RemDir Profiles
 call :PathNull
 call :Message
 
-rem To Google Chrome
+rem To Google Chrome cache in Local
 call :MoveDir AppData
 call :MoveDir Local
 call :MoveDir Google
@@ -43,7 +43,7 @@ call :RemDir "User Data"
 call :PathNull
 call :Message
 
-rem To Yandex Browser
+rem To Yandex Browser cache in Local
 call :MoveDir AppData
 call :MoveDir Local
 call :MoveDir Yandex
@@ -52,14 +52,14 @@ call :RemDir "User Data"
 call :PathNull
 call :Message
 
-rem To GitHub Desktop
+rem To GitHub Desktop cache in Local
 call :MoveDir AppData
 call :MoveDir Roaming
 call :RemDir "GitHub Desktop"
 call :PathNull
 call :Message
 
-rem To GitHub Repositories
+rem To GitHub Repositories cache in Local
 call :MoveDir Documents
 call :RemDir GitHub
 call :PathNull
