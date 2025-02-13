@@ -15,12 +15,12 @@ call :PathNumeroUno
 rem To Firefox cache in Local
 call :PrototypeMoveDir AppData Local Mozilla Firefox
 call :RemDir Profiles
-call :PathNull
+call :PathNumeroUno
 
 rem To Firefox cache in Roaming
 call :PrototypeMoveDir AppData Roaming Mozilla Firefox
 call :RemDir Profiles
-call :PathNull
+call :PathNumeroUno
 
 rem To Google Chrome cache in Local
 call :PrototypeMoveDir AppData Google Chrome
