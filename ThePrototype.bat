@@ -2,15 +2,15 @@
 setlocal
 
 rem Null path and check directory "AppData"
-call :PathNull
+call :PathNumeroUno
 call :MoveDir AppData
 call :PathDataCheck Local 
-call :PathNull
+call :PathNumeroUno
 call :MoveDir AppData
 call :PathDataCheck Roaming
-call :PathNull
+call :PathNumeroUno
 call :PathDataCheck Documents
-call :PathNull
+call :PathNumeroUno
 
 rem To Firefox cache in Local
 call :PrototypeMoveDir AppData Local Mozilla Firefox
@@ -25,27 +25,27 @@ call :PathNull
 rem To Google Chrome cache in Local
 call :PrototypeMoveDir AppData Google Chrome
 call :RemDir "User Data"
-call :PathNull
+call :PathNumeroUno
 
 rem To Yandex Browser cache in Local
 call :PrototypeMoveDir AppData Local Yandex YandexBrowser
 call :RemDir "User Data"
-call :PathNull
+call :PathNumeroUno
 
 rem To GitHub Desktop cache in Local
 call :PrototypeMoveDir AppData Roaming
 call :RemDir "GitHub Desktop"
-call :PathNull
+call :PathNumeroUno
 
 rem To GitHub Repositories cache in Documents
 call :PrototypeMoveDir Documents
 call :RemDir GitHub
-call :PathNull
+call :PathNumeroUno
 
-
+endlocal
 goto :End
 
-:PathNull
+:PathNumeroUno
     c:
     cd %USERPROFILE%
     echo.
@@ -54,7 +54,7 @@ goto :End
 goto :eof
 
 :PathDataCheck
-    if exist "%1\" (
+    if exist "%~1\" (
         echo Directory \%~1\ found
     ) else (
         echo Directory \%~1\ not found
@@ -62,7 +62,7 @@ goto :eof
 goto :eof
 
 :MoveDir
-    if exist "%1\" (
+    if exist "%~1\" (
         echo Directory \%~1\ found
         cd %1
     ) else (
@@ -71,8 +71,8 @@ goto :eof
 goto :eof
 
 :RemDir
-    if exist "%1\" (
-        rmdir %1 /s /q
+    if exist "%~1\" (
+        rmdir %~1 /s /q
         echo.
         echo Cache in directory \%~1\ remove
         echo.
