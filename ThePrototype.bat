@@ -86,7 +86,7 @@ goto :eof
 :PrototypeMoveDir
     :back
     if "%~1"=="" goto :eof
-    call :MoveDir %~1 
+    call :MoveDir "%~1" 
     shift
     goto back
 
