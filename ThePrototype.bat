@@ -71,7 +71,7 @@ goto :eof
 goto :eof
 
 :RemDir
-    if exist "%~1" (
+    if exist "%~1\" (
         rmdir %1 /s /q
         echo.
         echo Cache in directory \%~1\ remove
