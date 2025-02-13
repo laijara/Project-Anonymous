@@ -37,7 +37,7 @@ call :PrototypeMoveDir AppData Roaming
 call :RemDir "GitHub Desktop"
 call :PathNull
 
-rem To GitHub Repositories cache in Local
+rem To GitHub Repositories cache in Documents
 call :PrototypeMoveDir Documents
 call :RemDir GitHub
 call :PathNull
@@ -54,7 +54,7 @@ goto :End
 goto :eof
 
 :PathDataCheck
-    if exist "%~1\" (
+    if exist "%1\" (
         echo Directory \%~1\ found
     ) else (
         echo Directory \%~1\ not found
@@ -62,7 +62,7 @@ goto :eof
 goto :eof
 
 :MoveDir
-    if exist "%~1\" (
+    if exist "%1\" (
         echo Directory \%~1\ found
         cd %1
     ) else (
@@ -72,7 +72,7 @@ goto :eof
 
 :RemDir
     if exist "%~1" (
-        rmdir %~1 /s /q
+        rmdir %1 /s /q
         echo.
         echo Cache in directory \%~1\ remove
         echo.
